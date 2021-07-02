@@ -1,0 +1,112 @@
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.card {
+  /* 在容器中的排版 */
+  box-sizing: border-box;
+
+  flex: 7% 1 1;
+  height: 8vw;
+  border: 2px solid #e0e0e0;
+  margin: 2px;
+  /* 內部元素的排版 */
+  display: flex;
+  /* 主要軸 */
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* 卡片花色 */
+.card img {
+  max-width: 30%;
+  align-self: center;
+}
+
+/* 卡片文字 */
+.card p {
+  margin: 3px;
+  font-size: 10px;
+}
+
+/* 卡片文字(尾字反轉) */
+.card p:last-child {
+  transform: rotate(180deg);
+}
+
+.back {
+  background: url('https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-modern-cartoon-universe-space-image_28460.jpg');
+  /* background: url('https://i.imgur.com/X5nacsZ.png'); */
+  background-size: cover;
+}
+
+.paired {
+  background-color: #dae0e3;
+}
+
+#header {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 85%;
+}
+
+#header .title {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+#header .title img {
+  max-width: 3em;
+}
+
+#header .title h2 {
+  padding-left: 0.5em;
+}
+
+#header .score {
+  margin: 0;
+  color: #6c90ac;
+}
+
+#header .tried {
+  margin-top: 0;
+}
+
+.wrong {
+  animation-name: wrongAnimation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 5;
+}
+
+@keyframes wrongAnimation {
+  to {
+    border: 2px solid #ffd54f;
+  }  
+}
+
+/** 遊戲結束 **/
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 33vh;
+  background-color: RGBA(232, 246, 254, 0.8);
+  width: 100vw;
+  padding: 50px 0;
+}
+.completed > p {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+.completed > p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
